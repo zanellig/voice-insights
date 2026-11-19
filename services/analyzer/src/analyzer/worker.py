@@ -84,7 +84,8 @@ def analyze_job(self: "Task[..., None]", message: dict[str, Any]) -> None:
         )
     except PermanentError as error:
         return publish(failed(message, error, permanent=True))
-    except Exception as error:
+    # Any other failure counts as transient until the retries run out (ADR-0010).
+    except Exception as error:  # noqa: BLE001
         if self.request.retries < MAX_RETRIES:
             raise self.retry(
                 exc=error, countdown=BACKOFF_SECONDS * 2**self.request.retries
