@@ -70,7 +70,8 @@ def finish_all(client, model, jobs):
     model.finish(len(jobs))
     for tenant, job in jobs:
         wait_until(
-            lambda: state(client, tenant, job) == "done", f"Job {job['job_id']} done"
+            lambda tenant=tenant, job=job: state(client, tenant, job) == "done",
+            f"Job {job['job_id']} done",
         )
 
 
