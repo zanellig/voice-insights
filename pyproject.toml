@@ -40,6 +40,11 @@ src = ["services/*/src", "packages/*/src", "services/*/tests", "packages/*/tests
 [tool.ruff.lint]
 # The legacy synchronous service is deleted by #12, not linted.
 exclude = ["services/analyzer/app/**", "services/analyzer/main.py"]
+# On top of ruff's defaults: commented-out code, complexity, nesting depth, bare type: ignore.
+extend-select = ["ERA", "C901", "PLR1702", "PGH003"]
+# PLR1702 is a preview rule; only explicitly selected preview rules run.
+preview = true
+explicit-preview-rules = true
 
 [tool.basedpyright]
 include = [

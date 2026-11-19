@@ -13,7 +13,7 @@ def test_startup_loads_default_models(client):
 
 @pytest.mark.parametrize("text", list(LABELS["sentiment"]))
 def test_analyze_returns_fixed_labels(client, text):
-    config = {"lang": "es", **{name: True for name in ANALYSES}}
+    config = {"lang": "es", **dict.fromkeys(ANALYSES, True)}
     response = client.post("/analyze", json={"text": text, "config": config})
 
     assert response.status_code == 200
