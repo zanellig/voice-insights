@@ -33,6 +33,14 @@ testpaths = [
 # main.py sits beside app/ and is not part of the installed package
 pythonpath = ["services/analyzer"]
 
+[tool.ruff]
+# Every workspace package is first-party, so imports sort the same in every service.
+src = ["services/*/src", "packages/*/src", "services/*/tests", "packages/*/tests"]
+
+[tool.ruff.lint]
+# The legacy synchronous service is deleted by #12, not linted.
+exclude = ["services/analyzer/app/**", "services/analyzer/main.py"]
+
 [tool.basedpyright]
 include = [
     "packages/contracts/src",

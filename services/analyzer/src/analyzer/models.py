@@ -12,8 +12,9 @@ from functools import cache
 from typing import Any, Protocol, cast
 
 import torch
-from contracts import Analysis
 from transformers import BatchEncoding, PreTrainedModel, PreTrainedTokenizerBase
+
+from contracts import Analysis
 
 LANGUAGE = os.environ.get("ANALYZER_LANG", "es")
 DEVICE = torch.device(os.environ.get("ANALYZER_DEVICE", "cpu"))

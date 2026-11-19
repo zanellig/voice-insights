@@ -11,10 +11,10 @@ import os
 from typing import Any
 
 from celery import Celery, Task
-from contracts import AnalysisReady, AnalyzeRequested, Step, StepFailed
 from pydantic import BaseModel, ValidationError
 
 from analyzer import analyze, models
+from contracts import AnalysisReady, AnalyzeRequested, Step, StepFailed
 
 STORE_RESULT = "jobs_api.store_result"
 # Stands in for a missing or invalid tenant_id, which is for logging only.

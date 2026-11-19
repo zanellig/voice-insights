@@ -1,5 +1,6 @@
 """The Analyzer: labels every Segment of a Job in one batch per Analysis (ADR-0006)."""
 
+from analyzer import models
 from contracts import (
     Analysis,
     AnalysisResult,
@@ -11,8 +12,6 @@ from contracts import (
     SegmentAnalyses,
     SequenceResult,
 )
-
-from analyzer import models
 
 
 def analyze(

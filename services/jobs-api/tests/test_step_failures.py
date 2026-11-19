@@ -5,6 +5,7 @@ from types import SimpleNamespace
 from uuid import UUID
 
 import pytest
+
 from contracts import AnalysisReady, SegmentAnalyses, SequenceResult, StepFailed
 
 ACME = {"X-Consumer-Username": "acme"}

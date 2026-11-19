@@ -4,9 +4,9 @@ from types import SimpleNamespace
 from uuid import uuid4
 
 import pytest
-from contracts import Analysis, AnalysisReady, AnalyzeRequested, Segment, StepFailed
 
 from analyzer import analyze, worker
+from contracts import Analysis, AnalysisReady, AnalyzeRequested, Segment, StepFailed
 
 TEXTS = ["Me encanta!", "Pésimo servicio.", "Pablo vive en Madrid."]
 SEQUENCE = {

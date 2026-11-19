@@ -3,10 +3,10 @@
 from typing import Annotated, Literal
 from uuid import UUID
 
-from contracts import Analysis
 from fastapi import Depends, FastAPI, Header, HTTPException
 from pydantic import BaseModel, ConfigDict, Field
 
+from contracts import Analysis
 from jobs_api import lifecycle
 
 app = FastAPI(title="Jobs API")

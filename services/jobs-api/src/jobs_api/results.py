@@ -5,9 +5,9 @@ Run it beside the HTTP server: `celery -A jobs_api.results worker -Q results`.
 
 from typing import Any
 
-from contracts import AnalysisReady, StepFailed
 from pydantic import TypeAdapter
 
+from contracts import AnalysisReady, StepFailed
 from jobs_api import lifecycle
 from jobs_api.broker import app
 

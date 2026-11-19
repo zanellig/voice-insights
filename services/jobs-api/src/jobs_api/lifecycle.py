@@ -6,6 +6,11 @@ import os
 from typing import Literal
 from uuid import UUID
 
+from pydantic import BaseModel
+from sqlalchemy import func, select, update
+from sqlalchemy.dialects.postgresql import insert
+from sqlalchemy.orm import Session as OrmSession
+
 import contracts
 from contracts import (
     Analysis,
@@ -15,11 +20,6 @@ from contracts import (
     Step,
     StepFailed,
 )
-from pydantic import BaseModel
-from sqlalchemy import func, select, update
-from sqlalchemy.dialects.postgresql import insert
-from sqlalchemy.orm import Session as OrmSession
-
 from jobs_api.broker import app
 from jobs_api.db import Session
 from jobs_api.db.models import Job, Segment, StepResult, Tenant

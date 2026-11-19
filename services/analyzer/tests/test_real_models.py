@@ -9,6 +9,7 @@ RunPod or the RTX 3070 machine, alone so no other conftest forces offline mode:
 import os
 
 import pytest
+
 from contracts import Analysis, Segment
 
 pytestmark = pytest.mark.skipif(
